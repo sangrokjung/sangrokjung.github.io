@@ -324,14 +324,24 @@ a {
 }
 
 #id_subtitle_tag_part1{
-    top: 467px;
+    top: 675px;
 }
 #id_subtitle_tag_part2{
     top: 308px;
 }
+#id_subtitle_tag_part3{
+    top: 405px;
+}
+#id_subtitle_tag_part4{
+    top: 499px;
+}
+#id_subtitle_tag_part5{
+    top: 582px;
+}
 
-#id_subtitle_tag_part1,
-#id_subtitle_tag_part2{
+
+
+#id_subtitle_tag_part1, #id_subtitle_tag_part2, #id_subtitle_tag_part3, #id_subtitle_tag_part4, #id_subtitle_tag_part5{
     width: 1000px;
     display: flex;
     position: fixed;
@@ -347,14 +357,23 @@ a {
 }
 
 #id_subtitle_tag_part1_text{
-    top: 551px;
+    top: 730px;
 }
 #id_subtitle_tag_part2_text{
-    top: 397px;
+    top: 368px;
+}
+#id_subtitle_tag_part3_text{
+    top: 460px;
+}
+#id_subtitle_tag_part4_text{
+    top: 549px;
+}
+#id_subtitle_tag_part5_text{
+    top: 636px;
 }
 
-#id_subtitle_tag_part2_text,
-#id_subtitle_tag_part1_text{
+
+#id_subtitle_tag_part2_text, #id_subtitle_tag_part1_text, #id_subtitle_tag_part3_text, #id_subtitle_tag_part4_text, #id_subtitle_tag_part5_text{
     width: 1000px;
     display: flex;
     position: fixed;
@@ -365,10 +384,7 @@ a {
 }
 
 
-#id_title #id_links-3-p-1,
-#id_title #id_links-3-p-2,
-#id_title #id_links-3-p-3,
-#id_title #id_links-3-p-4{
+#id_title #id_links-3-p-1, #id_title #id_links-3-p-2, #id_title #id_links-3-p-3, #id_title #id_links-3-p-4{
     font-size: 40px;
     font-weight: 900;
     color: #1d1d1f;
@@ -420,7 +436,7 @@ a {
     flex-direction: column;
 
     position: fixed;
-    top: 360px;
+    top: 302px;
     text-align: left;
     height: 578px;
 
@@ -434,10 +450,7 @@ a {
     font-size: 30px;
 }
 
-#id_js,
-#id_java,
-#id_mysql,
-#id_cs{
+#id_js, #id_java, #id_mysql, #id_cs, #id_python, #id_docker{
     display: flex;
     flex-direction: row;
     width: 1000px;
