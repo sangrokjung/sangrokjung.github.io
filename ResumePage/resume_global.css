@@ -1,0 +1,369 @@
+@charset "UTF-8"; 
+
+
+
+.global-nav{
+    height: 100px;
+    /* background-color: #fdfdfd; */
+    border-top: #333333;
+    border-bottom: #333333;
+
+    position: sticky;
+    top: 0px;
+    left: 0px;
+}
+
+.global-nav-links{
+    /* flex처리, 균일하게 배치 */
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center; */
+
+    /* 너비 및 마진설정 */
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+    line-height: 48px;
+    padding: 0 22px;
+
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.global-nav-links-m{
+    display: inline;
+    justify-content: center;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+#id_global_home_title{
+    color: #1d1d1f;
+    font-size: 2rem;
+    font-weight: 900;
+    /* -webkit-transition-duration: 0.1s; Safari */
+    /* transition-duration: 0.1; */
+}
+
+#id_global_home_title:hover{
+    text-decoration: underline #CCF3EE;
+    color: #CCF3EE;
+}
+
+.global-nav-item{
+    color: #8a8a8a;
+    font-size: .875rem!;
+    line-height: 1.25rem!;
+    font-weight: 400;
+    font-style: normal;
+    -webkit-transition-duration: 0.2s; /* Safari */
+    transition-duration: 0.2s;
+
+}
+
+.global-nav-item:hover{
+    color: #CCF3EE;
+}
+
+.global-nav-item-home-1{
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    top: 50%;
+}
+
+.global-nav-item:not(.global-nav-item:nth-child(1)){
+    margin-left: 30px;
+}
+
+.global-nav-item:nth-child(6){
+    float: right;
+}
+
+.global-nav-sub-links{
+    position: sticky;
+    top: 101px;
+    left: 0px;
+}
+
+#id_main_title{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1000px;
+    top: 83px;
+    margin-top: 69px;
+    /* position: relative; */
+    opacity: 0;
+}
+
+#id_main_title2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1000px;
+    /* position: relative; */
+    margin-top: 44px;
+    opacity: 0;
+}
+
+#id_main_title h1,
+#id_main_title2 h1{
+    font-size: 6rem;
+    color:  #1d1d1f;
+}
+
+#id_main_title2 h1 strong{
+    text-decoration: underline #CCF3EE;
+}
+
+#id_main_title h2,
+#id_season h2,
+#id_season-1 h2,
+#id_season-2 h2{
+    font-size: 6rem;
+    color:  #CCF3EE;
+}
+
+#local-nav-item-1{
+    opacity: 0;
+}
+
+#id_season{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1000px;
+    top: 1320px;
+    position: relative;
+    opacity: 0;
+}
+
+#id_season,
+#id_season-1,
+#id_season-2{
+    font-size: 6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1000px;
+    color:  #1d1d1f;
+    opacity: 0;
+    z-index: -1;
+}
+
+#section-0{
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.div-history{
+    position: relative;
+    /* display: flex; */
+    padding-left: 0px;
+    top: 1088px;
+    z-index: -1;
+}
+
+#id_div_his_2{
+    top: 0px;
+}
+
+#id_div_his_1{
+    top: 0px;
+}
+
+.history{
+    display: block;
+    position: relative;
+    /* top: 1339px;
+    left: 750px; */
+    visibility: visible;
+    background-repeat: no-repeat;
+    background-image: url(../line.png);
+    /* background-image: -webkit-image-set(url(./line.png) 1x, url(./line.png) 2x, url(./line.png) 3x); */
+    background-position-x: 0;
+    background-position-y: 0px;
+    height: 1243px;
+}
+
+.history2{
+    display: block;
+    position: relative;
+    /* top: 1339px;
+    left: 750px; */
+    visibility: visible;
+    background-repeat: no-repeat;
+    background-image: url(../line.png);
+    /* background-image: -webkit-image-set(url(./line.png) 1x, url(./line.png) 2x, url(./line.png) 3x); */
+    background-position-x: 0;
+    background-position-y: 0px;
+    height: 1243px;
+}
+
+.history3{
+    display: block;
+    position: relative;
+    /* top: 1339px;
+    left: 750px; */
+    visibility: visible;
+    background-repeat: no-repeat;
+    background-image: url(../line.png);
+    /* background-image: -webkit-image-set(url(./line.png) 1x, url(./line.png) 2x, url(./line.png) 3x); */
+    background-position-x: 0;
+    background-position-y: 0px;
+    height: 1243px;
+}
+
+
+.history li{
+    font-weight: 900;
+    width: 900px;
+    left: -6px;
+    position: relative;
+    height: 185px;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 48px;
+    top: 2px;
+    background-repeat: no-repeat;
+    background-image: url(../img-dot.png);
+}
+
+.history2 li{
+    font-weight: 900;
+    width: 900px;
+    left: -6px;
+    position: relative;
+    height: 355px;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 48px;
+    top: 2px;
+    background-repeat: no-repeat;
+    background-image: url(../img-dot.png);
+}
+
+.history3 li{
+    font-weight: 900;
+    width: 900px;
+    left: -6px;
+    position: relative;
+    height: 269px;
+    font-size: 20px;
+    text-align: left;
+    padding-left: 48px;
+    top: 2px;
+    background-repeat: no-repeat;
+    background-image: url(../img-dot.png);
+}
+
+.history li strong{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 30px;
+    color: #60d6e0;
+}
+
+.history2 li strong{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 30px;
+    color: #60d6e0;
+}
+
+.history3 li strong{
+    display: block;
+    margin-bottom: 5px;
+    font-size: 30px;
+    color: #60d6e0;
+}
+
+#img_1{
+    width: 200px
+}
+
+#img_lotte,
+#vid_nam,
+#img_create,
+#img_the{
+    position: absolute;
+    padding-left: 434px;
+}
+
+#img_lotte{
+    display: flex;
+    opacity: 1;
+    width: 403px;
+    padding-left: 598px;
+    top:  19px;
+}
+#vid_nam{
+    top: 493px;
+    display: flex;
+    opacity: 1;
+    width: 403px;
+    padding-left: 598px;
+}
+
+#img_cmong{
+    width: 505px;
+    position: absolute;
+    padding-left: 434px;
+    top: 15px;
+    z-index: 1;
+}
+
+#img_army{
+    opacity: 1; 
+    width: 1000px;
+    /* padding-left: 598px; */
+    position: absolute;
+    padding-top: 184px;
+    z-index: -1;
+}
+
+#img_the{
+    width: 340px;
+    position: absolute;
+    padding-left: 660px;
+    z-index: 1;
+    top: -3px;
+}
+
+#img_create{
+    width: 340px;
+    position: absolute;
+    padding-left: 660px;
+    z-index: 1;
+    top: 516px;
+}
+
+#div_army{
+    display: flex;
+}
+
+#div_applemusic{
+    position: absolute;
+    top: 3221px;
+    width: 1000px;
+    opacity: 1;
+}
+#div_applemusic2{
+    position: absolute;
+    top: 9000px;
+    width: 1000px;
+    opacity: 1;
+}
+
+#id_history{
+    opacity: 0;
+}

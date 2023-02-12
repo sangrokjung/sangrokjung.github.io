@@ -1,0 +1,214 @@
+정상록의 이력서 페이지를 만드려고 한다.
+배운 애니메이션과 모든 기술들을 접목하여 제작하려 한다.
+힐링페이퍼(https://www.healingpaper.com/)의 스크롤시 애니메이션을 Motif하고자 한다.
+
+- Main Page
+    * 최상단 메뉴  
+        - 좌측 : 메인페이지(이력서 Title)
+        - 우측 : Skill Log(링크 추가), Github(링크 추가), Resume(페이지 추가)
+
+    * 메인 페이지
+        - 자기소개 Ex) 안녕하세요 배우고 제작하는것을 좋아하는~ (백그라운드 영상)
+        - 진행했던 모든 프로젝트(앨범, 뮤직비디오), 아르바이트를 하며 배우고 느낀 시사점과 서사와 철학
+
+    * 하단 단락
+        - 중간 © 2022 SangRok Jung
+
+    * 좌측 페이지 올리는 버튼 sticky
+
+- Resume Page
+    * Menu Switcher를 기반으로 년도별 이력내용을 보여주고자 한다. (한 페이지에 요약하지 않는것이 오히려 독이 될 수 도)
+            Menu Switcher가 switcher 될 때 해당 section으로 이동하는 로직으로 설계하고자 한다.
+            Menu Switcher는 sticky
+                학력, 외부 활동, 아르바이트 이력 +, 프로젝트 진행
+            
+
+[0512]
+- 메인 페이지 JS
+    0.  Window의 스크롤값, 현재 보여지는 Section,
+        현재 Section의 스크롤 값을 구하기 위한 현재 Section 전의 Section의 높이 값의 합
+        현재 Section의 스크롤값, 
+        Interval의 ID, Inerval 함수에 적용할 opicity, translateY의 값
+
+    1.  sectionSet Object 생성
+        각 섹션의 Position Type, 높이, 높이 설정을 위한 배수(Multiple), 
+        document의 태그를 로딩하는 Object, Object의 스타일 설정 값을 생성
+
+    2.  initSectionSet() 생성 
+        Section의 높이를 설정하는 함수
+
+    3.  getCurrentSection() 생성
+        Y Offset의 값과 Section Height의 값을 비교하여 Current Section을 가져는 하는 함수
+
+    4.  getPrevSectionHeight() 생성
+        현재 Section의 Height와 전 Section의 Height를 더하는 함수
+
+    5.  initHTMLPage() 생성
+        최초 로딩시 HTML Page를 초기화 하는 함수
+         * initSectionSet() 실행
+
+    6.  calcValue(values) 생성
+        현재 Section Y Offset 값에 따라 실행 시킬 함수
+        values값에 따라 애니메이션을 실행할 범위의 식이 적용된다.
+        //비교값 : 기준값
+
+    7.  playAnimation() 생성
+        Offset Rate를 생성 : section의 Y Offset / Current Section의 Height
+        각 Current Section마다 Offset Rate값에 따라 calcValue()를 실행하여
+        해당 Section의 Object의 style을 적용시켜 애니메이션을 발생시키는 함수
+    
+    8.  scrollLoop() 생성
+        스크롤시 수행 될 함수
+        * getCurrentSection() 실행
+        document의 body에 Attribute id를 Current Section의 따른 값을 입력
+        * playAnimation() 실행
+
+    9.  윈도우 Scroll 이벤트() 생성
+        yOffset             = window.scrollY
+        curreentSection     = getCurrentSection()
+        PrevSectionHeight   = getPrevSectionHeight()
+        sectionYOffset      = yOffset - PrevSectionHeight
+
+        * scrollLoop() 실행
+
+    10. 윈도우 DOMContentLaoded 이벤트() 생성
+        * animi() Interval 실행
+
+
+
+[0513]
+-메인 페이지
+    1. Section 0 상단 메인 타이틀 윈도우 이벤트로 에니메이션 출력
+    2. Section 1 타이틀 생성
+    3. Section 1 스크롤 이벤트로 에니메이션 출력
+    4. Section 2 텍스트 추가
+
++ 영상이 클릭 가능하게 opicity가 0이 될때 DIV의 display를 none으로
++ Fade Out이 확실하게 되야된다.
++ section 2 텍스트 추가, 아이콘 추가,
+
+[0514]
+- 메인 페이지
+    최초 로딩시 메인타이틀이 살짝 버벅임이 있음(MAC Chrome)
+    calcValue() Part가 시작됨과 끝날 때의 values를 처리 개선
+    각 Part의 Diplay 속성값 개선 (none, block)
+    메인페이지 하단 텍스트 생성
++ local-nav-links 배경 영상 생성
+
+[0515]
+- 메인 페이지
+    최초 로딩시 메인타이틀 영상 추가, 타이틀 색 변경
+        * z-index로 위치 지정
+
+[0516]
+- 상단 메뉴 버튼 추가, 포인터 액션
+    home, Skill Log, github
+
+- 메인 페이지 
+    section 0 영상 타이틀 생성
+    footer 작성자, 구분선 생성
+    좌측 하단 페이지 상단으로 올리는 버튼 생성 
+    Fade in out이 부자연스러움 개선 필요
+
+[0517]
+- 메인페이지 
+    section 1 배움 목록 추가
+    section 1 자기소개 및 연혁 생성
+    section 1 Skills 목록 생성
+
+[0518]
+- 메인 페이지
+    section 1 배움 목록 수정 및 링크 입력
+    section 2 애니메이션 설정
+    
++ 상단 메뉴에 이력서 메뉴 첨부
++ 중간에 나의 사진이 들어가면 좋겠다.
++ section 1 배움 목록 JAVA, MySql 목록 추가.
+
+[0519]
+- 상단메뉴
+    Resume 링크 추가
+- 메인 페이지
+    section 0 스크롤시 사진 생성
+    section 1 배움 목록 링크 border 생성, hover 추가
+    section 1 최상단 타이틀 생성 
+
++ 이력서 페이지 생성
++ 배움 목록 java 추가
++ 배움 목록 전 나타나고 사라질 큰 타이틀 추가
+
+[0520]
+- 메인 페이지
+    section 0 스크롤 내렸다가 올릴시 opacity issue 해결
+- 이력서 페이지
+    Menu Switcher 생성
+        Menu Switcher가 switcher 될 때 해당 section으로 이동하는 로직으로 설계하고자 한다.
+
+[0521]
+- 메인 페이지
+- 이력서 페이지
+    Menu Switcher Visaul 변경
+    global itmes position sticky 설정
+
++ 상단 올림 버튼 기능 오류 개선 필요
+
+[0522]
+    상단 올림 버튼 기능 개선
+- 메인 페이지
+    java part a tag 추가
+- 이력서 페이지
+
+[0523]
+- 메인 페이지
+    section 1 CS part 생성, java part 추가.
+    section 1 중요한것만 임팩트 있고 간결하게 edit.
+    section 1 Learn에 Mouse cursor 가지고 가면 블로그 이미지 보이는 에니메이션 추가
+
+- 이력서 페이지
+    gobal section sticky set.
+    스크롤시 애니메이션 생성
+
++ 메뉴 스위치 기능 생성
++ 깃허브 그린트리 보이게 하기
+
+[0524]
+- 이력서 페이지 
+    컨텐츠 추가 및 스크롤 애니메이션 생성
+    menu switcher 클릭 이벤트 생성
+
++ section 2 부근 스크롤 애니메이션 생성
+    
+[0525]
+- 이력서 페이지
+    image 추가, fadein/fadeout 애니메이션 설정
+    
+[0526]
+- 메인 페이지 
+    자기소개, 앞으로의 계획 내용 추가
+- 메인 메뉴
+    PPT 메뉴 생성
+- PPT 페이지 생성
+    main menu에 PPT download 메뉴 생성
+
++ PPT 페이지 건설
+
+[0527]
+- Main Menu
+    read me 메뉴 추가
+- ppt 페이지
+    요소 추가 및 ppt.pdf 업로드
+    링크 hover 액션 설계
+    스크롤 fade out 애니메이션 설계
+
+[0528]
+- Main Page
+    window.media 설계 1080px 미만 css.
+
+[0529]
+- Resume Page 
+    window.media 설계 1080px 미만 css.
+
++ phone 화면 설계
+
+
+
